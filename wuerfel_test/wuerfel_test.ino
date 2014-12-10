@@ -3,7 +3,8 @@ const int led2 = 3;
 const int led3 = 4;
 const int led4 = 1;
 const int swPin = 2;
-int zahl;
+const int analogPin =0;
+int randNum;
 
 void setup() {
   pinMode(led1, OUTPUT);
@@ -11,6 +12,8 @@ void setup() {
   pinMode(led3, OUTPUT);
   pinMode(led4, OUTPUT);
   pinMode(swPin, INPUT_PULLUP);
+  
+  randomSeed(analogRead(analogPin));
   
   for(int i=0; i<12; i++) {
     digitalWrite(led1, HIGH);
@@ -41,7 +44,7 @@ void loop() {
       digitalWrite(led3, LOW);
       digitalWrite(led4, LOW);
     
-      switch(zahl=random(0,6)) {
+      switch(randNum=random(0,6)) {
         case 0:
           digitalWrite(led4, HIGH);
         break;
