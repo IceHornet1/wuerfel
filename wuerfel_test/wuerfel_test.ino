@@ -5,8 +5,10 @@ const int led4 = 1;
 const int swPin = 2;
 const int analogPin =0;
 int randNum;
+int prevNum;
 
 void setup() {
+  Serial.begin(9600);
   pinMode(led1, OUTPUT);
   pinMode(led2, OUTPUT);
   pinMode(led3, OUTPUT);
@@ -43,8 +45,14 @@ void loop() {
       digitalWrite(led2, LOW);
       digitalWrite(led3, LOW);
       digitalWrite(led4, LOW);
+      
+      do {
+        randNum=random(0,6);
+        //Serial.print(randNum);
+      } while(randNum == prevNum);
+      //Serial.println(randNum);
     
-      switch(randNum=random(0,6)) {
+      switch(randNum) { 
         case 0:
           digitalWrite(led4, HIGH);
         break;
@@ -75,7 +83,7 @@ void loop() {
           digitalWrite(led3, HIGH);
         break;
       }
-      
+      prevNum = randNum;
       delay(i*50);
     }
   }
