@@ -15,21 +15,21 @@ void setup() {
   
   randomSeed(analogRead(analogPin));
   
-  for(int i=0; i<12; i++) {
+  for(int i=0; i<50; i++) {
     digitalWrite(led1, HIGH);
-    delay(10);
+    delay(1);
     digitalWrite(led1, LOW);
     
     digitalWrite(led2, HIGH);
-    delay(10);
+    delay(1);
     digitalWrite(led2, LOW);
     
     digitalWrite(led3, HIGH);
-    delay(10);
+    delay(1);
     digitalWrite(led3, LOW);
     
     digitalWrite(led4, HIGH);
-    delay(10);
+    delay(1);
     digitalWrite(led4, LOW);
   }
 }
