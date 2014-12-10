@@ -1,3 +1,5 @@
+#include <Entropy.h>
+
 const int led1 = 0;
 const int led2 = 3;
 const int led3 = 4;
@@ -9,13 +11,15 @@ int prevNum;
 
 void setup() {
   //Serial.begin(9600);
+  Entropy.initialize();
+  
   pinMode(led1, OUTPUT);
   pinMode(led2, OUTPUT);
   pinMode(led3, OUTPUT);
   pinMode(led4, OUTPUT);
   pinMode(swPin, INPUT_PULLUP);
   
-  randomSeed(analogRead(analogPin));
+  //randomSeed(analogRead(analogPin));
   
   for(int i=0; i<50; i++) {
     digitalWrite(led1, HIGH);
@@ -47,7 +51,7 @@ void loop() {
       digitalWrite(led4, LOW);
       
       do {
-        randNum=random(0,6);
+        randNum=Entropy.random(0,6);
         //Serial.print(randNum);
       } while(randNum == prevNum);
       //Serial.println(randNum);
