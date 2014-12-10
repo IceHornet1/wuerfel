@@ -76,7 +76,7 @@ void loop() {
         break;
       }
       
-      delay(i*100);
+      delay(i*50);
     }
   }
 }
