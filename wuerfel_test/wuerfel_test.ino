@@ -1,13 +1,13 @@
 #include <Entropy.h>
 
-const int led1 = 0;
-const int led2 = 3;
-const int led3 = 4;
-const int led4 = 1;
-const int swPin = 2;
-const int analogPin =0;
-int randNum;
-int prevNum;
+const byte led1 = 0;
+const byte led2 = 3;
+const byte led3 = 4;
+const byte led4 = 1;
+const byte swPin = 2;
+//const int analogPin =0;
+byte randNum;
+byte prevNum;
 
 void setup() {
   //Serial.begin(9600);
@@ -21,7 +21,7 @@ void setup() {
   
   //randomSeed(analogRead(analogPin));
   
-  for(int i=0; i<50; i++) {
+  for(byte i=0; i<50; i++) {
     digitalWrite(led1, HIGH);
     delay(1);
     digitalWrite(led1, LOW);
@@ -43,7 +43,7 @@ void setup() {
 void loop() {
   if (digitalRead(swPin) == LOW) {
     
-    for(int i=1; i<7; i++) {
+    for(byte i=1; i<7; i++) {
       
       digitalWrite(led1, LOW);
       digitalWrite(led2, LOW);
