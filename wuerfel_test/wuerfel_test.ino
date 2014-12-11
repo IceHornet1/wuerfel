@@ -56,7 +56,16 @@ void loop() {
       } while(randNum == prevNum);
       //Serial.println(randNum);
     
-      switch(randNum) { 
+      disp(randNum);
+      
+      prevNum = randNum;
+      delay(i*50);
+    }
+  }
+}
+
+void disp(byte x) {
+  switch(x) { 
         case 0:
           digitalWrite(led4, HIGH);
         break;
@@ -87,8 +96,4 @@ void loop() {
           digitalWrite(led3, HIGH);
         break;
       }
-      prevNum = randNum;
-      delay(i*50);
-    }
-  }
 }
