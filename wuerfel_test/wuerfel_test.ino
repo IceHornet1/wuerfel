@@ -103,14 +103,19 @@ void disp(byte x) {
   }
 }
 void sleepNow(void) {
-  attachInterrupt(swPin, pinInterrupt, LOW);
+  attachInterrupt(0, pinInterrupt, LOW);
   delay(100);
 
   set_sleep_mode(SLEEP_MODE_PWR_DOWN);
 
   sleep_enable();
+  
+  digitalWrite(led1, LOW);
+  digitalWrite(led2, LOW);
+  digitalWrite(led3, LOW);
+  digitalWrite(led4, LOW);
 
-  sleep_mode();
+  sleep_cpu();
 
   sleep_disable();
 }
