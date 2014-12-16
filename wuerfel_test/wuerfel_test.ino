@@ -20,7 +20,7 @@ void setup() {
   pinMode(led3, OUTPUT);
   pinMode(led4, OUTPUT);
   pinMode(swPin, INPUT_PULLUP);
-  pinMode(emptyPin, INPUT_PULLUP);
+  pinMode(emptyPin, INPUT);
 	
   power_adc_disable();
   power_usi_disable();
@@ -42,17 +42,30 @@ void setup() {
     delay(1);
     digitalWrite(led4, LOW);
   }
+  
+  sleepNow();
 }
 
 void loop() {
+  
+  //delay(10);
+  
   if (digitalRead(swPin) == LOW) {
+    do {
+      do {
+      
+        randNum=random(0,6);
+        
+      } while(randNum == prevNum);
     
-    for(byte i=1; i<7; i++) {
+      disp(randNum);
+      
+      prevNum = randNum;
+      delay(100);
+      
+    } while(digitalRead(swPin) == LOW);
     
-      digitalWrite(led1, LOW);
-      digitalWrite(led2, LOW);
-      digitalWrite(led3, LOW);
-      digitalWrite(led4, LOW);
+    for(byte i=1; i<6; i++) {
       
       do {
       
@@ -63,34 +76,45 @@ void loop() {
       disp(randNum);
       
       prevNum = randNum;
-      delay(i*50);
+      delay((i*50)+100);
     }
   }
-  sleepNow();
+  // sleepNow();
 }
 
 void disp(byte x) {
   switch(x) { 
     case 0:
+      digitalWrite(led1, LOW);
+      digitalWrite(led2, LOW);
+      digitalWrite(led3, LOW);
       digitalWrite(led4, HIGH);
     break;
     
     case 1:
+      digitalWrite(led1, LOW);
+      digitalWrite(led2, LOW);
       digitalWrite(led3, HIGH);
+      digitalWrite(led4, LOW);
     break;
     
     case 2:
+      digitalWrite(led1, LOW);
+      digitalWrite(led2, LOW);
       digitalWrite(led3, HIGH);
       digitalWrite(led4, HIGH);
     break;
     
     case 3:
       digitalWrite(led1, HIGH);
+      digitalWrite(led2, LOW);
       digitalWrite(led3, HIGH);
+      digitalWrite(led4, LOW);
     break;
     
     case 4:
       digitalWrite(led1, HIGH);
+      digitalWrite(led2, LOW);
       digitalWrite(led3, HIGH);
       digitalWrite(led4, HIGH);
     break;
@@ -99,6 +123,7 @@ void disp(byte x) {
       digitalWrite(led1, HIGH);
       digitalWrite(led2, HIGH);
       digitalWrite(led3, HIGH);
+      digitalWrite(led4, LOW);
     break;
   }
 }
@@ -106,14 +131,9 @@ void sleepNow(void) {
   attachInterrupt(0, pinInterrupt, LOW);
   delay(100);
 
-  set_sleep_mode(SLEEP_MODE_PWR_DOWN);
+  set_sleep_mode(SLEEP_MODE_IDLE);
 
   sleep_enable();
-  
-  digitalWrite(led1, LOW);
-  digitalWrite(led2, LOW);
-  digitalWrite(led3, LOW);
-  digitalWrite(led4, LOW);
 
   sleep_cpu();
 
@@ -121,5 +141,5 @@ void sleepNow(void) {
 }
 
 void pinInterrupt(void) {
-  detachInterrupt(swPin);
+  detachInterrupt(0);
 }
