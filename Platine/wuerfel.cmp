@@ -1,0 +1,157 @@
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 20.11.2014 17:41:05
+
+BeginCmp
+TimeStamp = /546CF3A1;
+Reference = C1;
+ValeurCmp = 4.7uH;
+IdModule  = Bourns_inductor;
+EndCmp
+
+BeginCmp
+TimeStamp = /546CF392;
+Reference = C2;
+ValeurCmp = 10uF;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /546CF383;
+Reference = C3;
+ValeurCmp = 10uF;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /546CF374;
+Reference = G1;
+ValeurCmp = AAA 1.5V;
+IdModule  = AAA_Clip;
+EndCmp
+
+BeginCmp
+TimeStamp = /546CDD1B;
+Reference = K1;
+ValeurCmp = ATTINY85-P;
+IdModule  = DIP-8__300;
+EndCmp
+
+BeginCmp
+TimeStamp = /546CDD41;
+Reference = P1;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /546D02F0;
+Reference = P2;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /546D02F6;
+Reference = P3;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /546D02FC;
+Reference = P4;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /546D0302;
+Reference = P5;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /546D0308;
+Reference = P6;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /546D030E;
+Reference = P7;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /546CDDAA;
+Reference = R1;
+ValeurCmp = 600;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /546D02B6;
+Reference = R2;
+ValeurCmp = 600;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /546D02BC;
+Reference = R3;
+ValeurCmp = 600;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /546D02C2;
+Reference = R4;
+ValeurCmp = 600;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /546D02D2;
+Reference = R5;
+ValeurCmp = 600;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /546D02D8;
+Reference = R6;
+ValeurCmp = 600;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /546D02DE;
+Reference = R7;
+ValeurCmp = 600;
+IdModule  = SM1206;
+EndCmp
+
+BeginCmp
+TimeStamp = /546CFF93;
+Reference = S1;
+ValeurCmp = SPDT;
+IdModule  = CK_schiebeschalter;
+EndCmp
+
+BeginCmp
+TimeStamp = /546CF8CE;
+Reference = S2;
+ValeurCmp = SPST;
+IdModule  = Schurter_switch;
+EndCmp
+
+BeginCmp
+TimeStamp = /546CFA2E;
+Reference = T1;
+ValeurCmp = TLV61224;
+IdModule  = TLV61224;
+EndCmp
+
+EndListe
